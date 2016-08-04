@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
-import os
-import cgi
+import os # Debug related
+import cgi # For getting form input
 
 print("Content-type: text/html\n\n")
 
 # Get input into dictionary
 form = cgi.FieldStorage()
 
-# Something wrong with input
+# Something wrong with input, return and modify input fields
+# TODO: check if username is taken in DB?
 if ("nickName" not in form) or ("password1" not in form) or ("password2" not in form) or (form["password1"].value != form["password2"].value):
     # Get index file for editing
     file = open("index.html", "r")
@@ -26,7 +27,7 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
         sp = content.split('name="nickName"')
         new = 'name="nickName" value="'+form["nickName"].value+'"'
         content = new.join(sp)
-    # Same for firstName/lastName
+    # Same if/else routine for firstName and lastName
     if ("firstName" not in form):
         sp = content.split("Benutzername")
         content = "FEHLT: Benutzername".join(sp)
@@ -41,13 +42,13 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
         sp = content.split('name="lastName"')
         new = 'name="lastName" value="'+form["lastName"].value+'"'
         content = new.join(sp)
-    # Passwords are there but differ
+    # Passwords are there but differ, print an error in the placeholder
     if (("password1" in form) and ("password2" in form)) and (form["password1"].value != form["password2"].value):
         sp = content.split('placeholder="Passwort"')
         content = 'placeholder="FEHLER: Ungleiches Passwort"'.join(sp)
         sp = content.split('placeholder="Passwort wiederholen"')
         content = 'placeholder="FEHLER: Ungleiches Passwort"'.join(sp)
-    # Passwords do not differ, mark the missing password, input the other
+    # Mark passwords as missing in placeholder or input the given value
     else:
         if ("password1" not in form):
             sp = content.split('placeholder="Passwort"')

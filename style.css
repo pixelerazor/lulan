@@ -1,0 +1,36 @@
+#inputFieldContainer {
+  padding: 0;
+  border: none;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#inputField {
+  padding: 0;
+  border: none;
+  font-family: verdana, sans-serif;
+  font-size: 28px;
+}
+
+#inputField input{
+  position: relative;
+  width: 260px;
+  margin:30px 30px 40px;
+  padding: 10px 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  -webkit-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
+  -moz-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
+  box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
+}
+
+#inputField input:focus{
+  outline:0;
+	border:1px solid #95D2DF;
+	-webkit-box-shadow: 0 0 5px 4px rgba(36,184,194, 0.10);
+	-moz-box-shadow: 0 0 5px 4px rgba(36,184,194, 0.10);
+	box-shadow: 0 0 5px 4px rgba(36,184,194, 0.10);
+}

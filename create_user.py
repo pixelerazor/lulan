@@ -28,20 +28,12 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
         new = 'name="nickName" value="'+form["nickName"].value+'"'
         content = new.join(sp)
     # Same if/else routine for firstName and lastName
-    if ("firstName" not in form):
-        sp = content.split("Benutzername")
-        content = "FEHLT: Benutzername".join(sp)
-    else:
+    if ("firstName" in form):
         sp = content.split('name="firstName"')
-        new = 'name="firstName" value="'+form["firstName"].value+'"'
-        content = new.join(sp)
-    if ("lastName" not in form):
-        sp = content.split("Benutzername")
-        content = "FEHLT: Benutzername".join(sp)
-    else:
+        content = ('name="firstName" value="'+form["firstName"].value+'"').join(sp)
+    if ("lastName" in form):
         sp = content.split('name="lastName"')
-        new = 'name="lastName" value="'+form["lastName"].value+'"'
-        content = new.join(sp)
+        content = ('name="lastName" value="'+form["lastName"].value+'"').join(sp)
     # Passwords are there but differ, print an error in the placeholder
     if (("password1" in form) and ("password2" in form)) and (form["password1"].value != form["password2"].value):
         sp = content.split('placeholder="Passwort"')

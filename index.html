@@ -1,27 +1,43 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="style.css" />
-		<title>Welcome to lulan</title>
-	</head>
-	<body>
-		<div id="wrapper">
-		<div id="title"><h1>Welcome to lulan</h1>
-			<h2>Enlarge your e-penis</h2>
-		</div>
-		<div id="inputFieldContainer">
-		<div id="inputField">
-		<form action="create_user.py" method="post">
-			<input type="text" name="nickName" maxlength="30" placeholder="Benutzername"><br>
-			<input type="text" name="firstName" maxlength="30" placeholder="Vorname (Optional)"><br>
-			<input type="text" name="lastName" maxlength="30" placeholder="Nachname (Optional)"><br>
-			<input type="password" name="password1" maxlength="30" placeholder="Passwort"><br>
-			<input type="password" name="password2" maxlength="30" placeholder="Passwort wiederholen">
-			<P>
-			<button type="submit">Eingaben absenden</button>
-			</P>
-		</div>
-		</div>
-		</div>
-</form>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+        <title>Welcome to lulan</title>
+    </head>
+    <body>
+        <div class="firstWrapper">
+            <nav>
+                <ul>
+                    <li><a href="">Infos</a></li>
+                    <li><a href="">Turniere</a></li>
+                    <li><a href="">Profil</a></li>
+                    <li><a href="">Kommunikation</a></li>
+                    <li class="navRight"><button type="submit" class="button">Einloggen</button></li>
+                    <li class="navRight"><button type="submit" class="button">Anmelden</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="secondWrapper">
+            <div id="wrapper">
+                <div id="title">
+                    <h1>Welcome to lulan</h1>
+                    <h2>Enlarge your e-penis</h2>
+                </div>
+                <div id="inputFieldContainer">
+                    <div id="inputField">
+                        <form action="create_user.py" method="post">
+                            <input type="text" name="nickName" maxlength="30" placeholder="Benutzername"><br>
+                            <input type="text" name="firstName" maxlength="30" placeholder="Vorname (Optional)"><br>
+                            <input type="text" name="lastName" maxlength="30" placeholder="Nachname (Optional)"><br>
+                            <input type="password" name="password1" maxlength="30" placeholder="Passwort"><br>
+                            <input type="password" name="password2" maxlength="30" placeholder="Passwort wiederholen">
+                            <p><button type="submit" class="button">Anmelden</button></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thridWrapper"></div>
+        <div class="fourthWrapper"></div>
+        <div class="fifthWrapper"></div>
+    </body>
 </html>

@@ -211,12 +211,12 @@ h2 {
 }
 
 #footer {
-    color: white;
+    color: black;
     font-size: 16px;
     padding: 20px;
     text-align: center;
     clear: both;
-    background-color: #000000;
+    background-color: #FFFFFF;
     bottom: 0;
 }
 

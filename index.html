@@ -1,43 +1,83 @@
 <html>
-    <head>
-        <link type="text/css" rel="stylesheet" href="style.css" />
-        <title>Welcome to lulan</title>
-    </head>
-    <body>
-        <div class="firstWrapper">
-            <nav>
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>lulan - a webinterface to manage lan gaming events.</title>
+</head>
+<body>
+<!-- CONTAINER -->
+    <div id="container">
+        <!-- HEADER -->
+        <div id="header">
+            <div id="navbar">
                 <ul>
-                    <li><a href="">Infos</a></li>
-                    <li><a href="">Turniere</a></li>
-                    <li><a href="">Profil</a></li>
-                    <li><a href="">Kommunikation</a></li>
-                    <li class="navRight"><button type="submit" class="button">Einloggen</button></li>
-                    <li class="navRight"><button type="submit" class="button">Anmelden</button></li>
+                    <li class="dropdown"><button class="dropbtn">Overview</button>
+                        <div class="dropdown-content">
+                            <a href="#">Summary</a><br>
+                            <a href="#">My profile</a><br>
+                            <a href="#">List of participants</a><br>
+                            <a href="#">Seating plan</a><br>
+                        </div>
+                    </li>
+                    <li class="dropdown"><button class="dropbtn">Communication</button>
+                        <div class="dropdown-content">
+                            <a href="#">Chat</a><br>
+                            <a href="#">Forum</a><br>
+                        </div>
+                    </li>
+                    <li class="dropdown"><button class="dropbtn">Gaming</button>
+                        <div class="dropdown-content">
+                            <a href="#">Server list</a><br>
+                            <a href="#">Tournament system</a><br>
+                            <a href="#">Who has my games?</a><br>
+                        </div>
+                    </li>
+                    <li class="dropdown"><button class="dropbtn">Catering</button>
+                        <div class="dropdown-content">
+                            <a href="#">Order food</a><br>
+                        </div>
+                    </li>
+                    <li class="dropdown"><button class="dropbtn">Support</button>
+                        <div class="dropdown-content">
+                            <a href="#">Technical support</a><br>
+                            <a href="#">FAQ</a><br>
+                        </div>
+                    </li>
                 </ul>
-            </nav>
+            </div>
+            <div id="logbar">
+                <label>
+                    <input type="text" name="nickName" maxlength="20" placeholder="  Nickname ..." class="inputLogbar">
+                    <input type="password" name="password" maxlenght="20" placeholder="  Password ..." class="inputLogbar">
+                    <button type="submit" class="button">Login</button>
+                </label>
+            </div>
         </div>
-        <div class="secondWrapper">
-            <div id="wrapper">
-                <div id="title">
-                    <h1>Welcome to lulan</h1>
-                    <h2>Enlarge your e-penis</h2>
-                </div>
-                <div id="inputFieldContainer">
-                    <div id="inputField">
-                        <form action="create_user.py" method="post">
-                            <input type="text" name="nickName" maxlength="30" placeholder="Benutzername"><br>
-                            <input type="text" name="firstName" maxlength="30" placeholder="Vorname (Optional)"><br>
-                            <input type="text" name="lastName" maxlength="30" placeholder="Nachname (Optional)"><br>
-                            <input type="password" name="password1" maxlength="30" placeholder="Passwort"><br>
-                            <input type="password" name="password2" maxlength="30" placeholder="Passwort wiederholen">
-                            <p><button type="submit" class="button">Anmelden</button></p>
-                        </form>
+        <!-- CONTENT AREA-->
+        <div>
+            <div id="banner">
+                        <div id="title">
+                            <h1>Welcome to lulan</h1>
+                            <h2>a webinterface to manage lan gaming events.</h2>
+                        </div>
+                        <div id="inputFieldContainer">
+                            <div class="inputRegister">
+                                <form action="create_user.py" method="post">
+                                    <input type="text" name="nickName" maxlength="30" placeholder="  Nickname ..."><br>
+                                    <input type="text" name="firstName" maxlength="30" placeholder="  Fist name (optional) ..."><br>
+                                    <input type="text" name="lastName" maxlength="30" placeholder="  Last name (optional) ..."><br>
+                                    <input type="password" name="password1" maxlength="30" placeholder="  Password ..."><br>
+                                    <input type="password" name="password2" maxlength="30" placeholder="  Password ...">
+                                    <p><button type="submit" class="button">Register</button></p>
+                                </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="thridWrapper"></div>
-        <div class="fourthWrapper"></div>
-        <div class="fifthWrapper"></div>
-    </body>
+        <!-- FOOTER -->
+        <div id="prefooter"></div>
+        <div id="footer">© 2016 lulan.</div>
+    </div>
+<!-- END CONTAINER -->
+</body>
 </html>

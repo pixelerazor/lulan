@@ -193,23 +193,6 @@ h2 {
     height: 550px;
 }
 
-#left_col {
-    float:left;
-    width: 50%;
-    border: 0px solid #000000;
-}
-
-#right_col {
-    float: right;
-    width: 50%;
-    border: 0px solid #000000;
-}
-
-#prefooter {
-    background-color: #FFFFFF;
-    min-height: auto;
-}
-
 #footer {
     color: black;
     font-size: 16px;
@@ -218,6 +201,8 @@ h2 {
     clear: both;
     background-color: #FFFFFF;
     bottom: 0;
+    position: fixed;
+    width: 100%;
 }
 
 #title {

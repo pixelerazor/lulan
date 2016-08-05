@@ -12,7 +12,7 @@ form = cgi.FieldStorage()
 # TODO: check if username is taken in DB?
 if ("nickName" not in form) or ("password1" not in form) or ("password2" not in form) or (form["password1"].value != form["password2"].value):
     # Get index file for editing
-    file = open("index.html", "r")
+    file = open("registration.html", "r")
     content = file.read()
     file.close()
     # Add error message before input form

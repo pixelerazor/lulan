@@ -24,6 +24,11 @@ h3 {
     font-weight: 200;
 }
 
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
+
 /* divs for general layout */
 
 #container {

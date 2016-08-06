@@ -2,8 +2,7 @@
 
 import os # Debug related
 import cgi # For getting form input
-
-print("Content-type: text/html\n\n")
+from printOperations import *
 
 # Get input into dictionary
 form = cgi.FieldStorage()
@@ -11,22 +10,23 @@ form = cgi.FieldStorage()
 # Something wrong with input, return and modify input fields
 # TODO: check if username is taken in DB?
 if ("nickName" not in form) or ("password1" not in form) or ("password2" not in form) or (form["password1"].value != form["password2"].value):
+    printHeader()
+    printNav()
     # Get index file for editing
     file = open("registration.html", "r")
     content = file.read()
     file.close()
     # Add error message before input form
     sp = content.split("<form")
-    content = "\t\t<p>Fehlende oder falsche Eingabe!</p>\n<form".join(sp)
+    content = "\t\t<h3>Input missing or wrong!</h3>\n<form".join(sp)
     # Error for missing nickName
     if ("nickName" not in form):
-        sp = content.split("Benutzername")
-        content = "FEHLT: Benutzername".join(sp)
+        sp = content.split("Nickname ...")
+        content = "MISSING: Nickname".join(sp)
     # Fill in nickName if found
     else:
         sp = content.split('name="nickName"')
-        new = 'name="nickName" value="'+form["nickName"].value+'"'
-        content = new.join(sp)
+        content = ('name="nickName" value="'+form["nickName"].value+'"').join(sp)
     # Same if/else routine for firstName and lastName
     if ("firstName" in form):
         sp = content.split('name="firstName"')
@@ -36,27 +36,28 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
         content = ('name="lastName" value="'+form["lastName"].value+'"').join(sp)
     # Passwords are there but differ, print an error in the placeholder
     if (("password1" in form) and ("password2" in form)) and (form["password1"].value != form["password2"].value):
-        sp = content.split('placeholder="Passwort"')
-        content = 'placeholder="FEHLER: Ungleiches Passwort"'.join(sp)
-        sp = content.split('placeholder="Passwort wiederholen"')
-        content = 'placeholder="FEHLER: Ungleiches Passwort"'.join(sp)
+        sp = content.split('placeholder="Password ..."')
+        content = 'placeholder="ERROR: Passwords differ"'.join(sp)
+        sp = content.split('placeholder="Repeat Password ..."')
+        content = 'placeholder="ERROR: Passwords differ"'.join(sp)
     # Mark passwords as missing in placeholder or input the given value
     else:
         if ("password1" not in form):
-            sp = content.split('placeholder="Passwort"')
-            content = 'placeholder="FEHLT: Passwort"'.join(sp)
+            sp = content.split('placeholder="Password ..."')
+            content = 'placeholder="MISSING: Password ..."'.join(sp)
         else:
             sp = content.split('name="password1"')
             new = 'name="password1" value="'+form["password1"].value+'"'
             content = new.join(sp)
         if ("password2" not in form):
-            sp = content.split('placeholder="Passwort wiederholen"')
-            content = 'placeholder="FEHLT: Passwort wiederholen"'.join(sp)
+            sp = content.split('placeholder="Repeat password ..."')
+            content = 'placeholder="MISSING: Repeat password ..."'.join(sp)
         else:
             sp = content.split('name="password2"')
             new = 'name="password2" value="'+form["password2"].value+'"'
             content = new.join(sp)
     print(content)
+    printFooter()
 # Input valid, create the user
 # TODO: write to DB instead of HTML
 else:

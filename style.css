@@ -1,5 +1,5 @@
 /*Allgemeine Formatierung*/
-body{
+body {
     margin: 0;
 }
 
@@ -185,8 +185,6 @@ h3 {
     display: block;
     padding: 0 0 0 20px;
 }
-
-
 
 #banner {
     background: url(banner_03.jpg);

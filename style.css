@@ -1,27 +1,106 @@
-/*Allgemeine Formatierung*/
+/* base html elements */
 body {
     margin: 0;
 }
 
 h1 {
-    text-shadow: 0 0 5px #000000, 0 0 8px #000000;
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 60px;
+    font-size: 3.75em;
     font-weight: 200;
 }
 
 h2 {
-    text-shadow: 0 0 5px #000000, 0 0 8px #000000;
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 28px;
+    font-size: 1.75em;
     font-weight: 200;
 }
 
 h3 {
-    text-shadow: 0 0 5px #000000, 0 0 8px #000000;
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 200;
+}
+
+/* divs for general layout */
+
+#container {
+    width: 100%;
+    background: #ffffff;
+    margin: 0 auto;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    font-family: 'Lato';
+    font-size: 1.125em;
+}
+
+#header {
+    width: 100%;
+    height: 5em;
+    border-bottom: 0.0625em solid #000000;
+    background: #ffffff;
+}
+
+#navbar {
+    float: left;
+    height:1.25em;
+    clear:both;
+}
+
+#logbar {
+    float: right;
+    height:1.25em;
+    clear: both;
+    list-style-type: none;
+    font-size: 0.875em;
+    display: block;
+}
+
+#nav_bar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+
+#navbar ul li {
+    list-style-type: none;
+    float: left;
+    padding: 0.625em;
+}
+
+#navbar ul li a {
+    font-size: 0.875em;
+    float: left;
+    display: block;
+    padding: 0 0 0 1.25em;
+}
+
+#banner {
+    background: url(banner_03.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 35em;
+}
+
+#footer {
+    color: black;
+    font-size: 1em;
+    padding: 1.25em;
+    text-align: center;
+    clear: both;
+    background-color: #FFFFFF;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+#title {
+    float: left;
+    padding: 6.25em;
+    height: 100%;
 }
 
 /* Menügestaltung, Buttons und Dropdownmenue */
@@ -31,12 +110,12 @@ h3 {
     overflow: visible;
     display: inline-block;
     padding: 0.5em 1em;
-    border: 1px solid #d4d4d4;
+    border: 0.0625em solid #d4d4d4;
     margin: 0;
     text-decoration: none;
     text-align: center;
-    text-shadow: 1px 1px 0 #fff;
-    font-size:16px
+    text-shadow: 0.0625em 0.0625em 0 #fff;
+    font-size:1em
     color: #333;
     white-space: nowrap;
     cursor: pointer;
@@ -62,7 +141,7 @@ h3 {
     border-color: #3072b3;
     border-bottom-color: #2a65a0;
     text-decoration: none;
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    text-shadow: -0.0625em -0.0625em 0 rgba(0,0,0,0.3);
     color: #fff;
     background-color: #3c8dde;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
@@ -92,30 +171,30 @@ h3 {
 .dropbtn {
     background-color: #FFFFFF;
     color: black;
-    font-size:18px;
+    font-size:1.125em;
     border: none;
     cursor: pointer;
 }
 
 .dropdown {
-    font-size: 18px;
+    font-size: 1.125em;
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
-    font-size: 18px;
+    font-size: 1.125em;
     display: none;
     position: absolute;
     background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 10em;
+    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
 }
 
 .dropdown-content a {
-    font-size: 18px;
+    font-size: 1.125em;
     color: black;
-    padding: 16px 16px;
+    padding: 1em 1em;
     text-decoration: none;
     display: block;
 }
@@ -132,110 +211,31 @@ h3 {
     background-color: rgba(255, 255, 255, 0);
 }
 
-/* Formatierung der Container */
-
-#container {
-    width: 100%;
-    background: #ffffff;
-    margin: 0 auto;
-    margin: 0;
-    color: black;
-    text-decoration: none;
-    font-family: 'Lato';
-    font-size: 18px;
-}
-
-#header {
-    width: 100%;
-    height: 80px;
-    border-bottom: 1px solid #000000;
-    background: #ffffff;
-}
-
-#navbar {
-    float: left;
-    height:20px;
-    clear:both;
-}
-
-#logbar {
-    float: right;
-    height:20px;
-    clear: both;
-    list-style-type: none;
-    font-size: 14px;
-    display: block;
-}
-
-#nav_bar ul {
-    margin:0;
-    padding:0;
-    list-style-type:none;
-}
-
-#navbar ul li {
-    list-style-type: none;
-    float: left;
-    padding: 10px;
-}
-
-#navbar ul li a {
-    font-size: 14px;
-    float: left;
-    display: block;
-    padding: 0 0 0 20px;
-}
-
-#banner {
-    background: url(banner_03.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 550px;
-}
-
-#footer {
-    color: black;
-    font-size: 16px;
-    padding: 20px;
-    text-align: center;
-    clear: both;
-    background-color: #FFFFFF;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-}
-
-#title {
-    float: left;
-    padding: 100px;
-    height: 100%;
-}
-
 /* Formatierung des Registrationsformulars */
 
 .inputLogbar {
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    width: 240px;
-    height: 30px;
-    border: 1px solid #cfcfcf;
-    -webkit-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
-    -moz-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
-    box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
+    margin-right: 0.625em;
+    margin-left: 0.625em;
+    font-size: 0.875em;
+    border-radius: 0.25em;
+    width: 15em;
+    height: 1.875em;
+    border: 0.0625em solid #cfcfcf;
+    -webkit-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
+    -moz-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
+    box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
 }
 
 .inputLogbar input:focus{
     outline:0;
-    border:1px solid rgba(43, 43, 43, 0.56);
-    -webkit-box-shadow: 0 0 5px 4px rgb(0, 0, 0);
-    -moz-box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
+    border:0.0625em solid rgba(43, 43, 43, 0.56);
+    -webkit-box-shadow: 0 0 0.3125em 0.25em rgb(0, 0, 0);
+    -moz-box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1);
 }
 
 .inputRegister {
-    padding: 120px;
+    padding: 7.5em;
     border: none;
     display: block;
     text-align:center;
@@ -243,21 +243,21 @@ h3 {
 
 .inputRegister input{
     margin-bottom: 1em;
-    font-size: 14px;
+    font-size: 0.875em;
     position: relative;
-    width: 240px;
-    height: 30px;
-    border-radius: 4px;
-    border: 1px solid #cfcfcf;
-    -webkit-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
-    -moz-box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
-    box-shadow: inset 0 0 4px 2px rgba(0,0,0, 0.1);
+    width: 15em;
+    height: 1.875em;
+    border-radius: 0.25em;
+    border: 0.0625em solid #cfcfcf;
+    -webkit-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
+    -moz-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
+    box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1);
 }
 
 .inputRegister input:focus{
     outline:0;
-    border:1px solid rgba(43, 43, 43, 0.56);
-    -webkit-box-shadow: 0 0 5px 4px rgb(0, 0, 0);
-    -moz-box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
+    border:0.0625em solid rgba(43, 43, 43, 0.56);
+    -webkit-box-shadow: 0 0 0.3125em 0.25em rgb(0, 0, 0);
+    -moz-box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1);
 }

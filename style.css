@@ -1,4 +1,43 @@
+/* divs for general layout */
+
+#container {
+    /*width: 64em;*/
+    height: 44em;
+    background: #ffffff;
+    margin: 0 auto;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    font-family: 'Lato';
+    font-size: 1em;
+}
+
+#header {
+    height: 10%;
+}
+
+#banner {
+    height: 80%;
+    background: url(banner_03.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#footer {
+    color: black;
+    font-size: 1em; /* 16px/16 = 1 */
+    text-align: center;
+    height: 10%;
+}
+
+/* "No one inspects the spanish inquisition!" */
+.copyleft {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
 /* base html elements */
+
 body {
     margin: 0;
 }
@@ -24,126 +63,60 @@ h3 {
     font-weight: 200;
 }
 
-.copyleft {
-  display: inline-block;
-  transform: rotate(180deg);
-}
+/* header related divs */
 
-/* divs for general layout */
+    /* navigation.html */
+    #navbar {
+        height: 100%;
+        width: 60%;
+        float: left;
+    }
 
-#container {
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    margin: 0 auto;
-    margin: 0;
-    color: black;
-    text-decoration: none;
-    font-family: 'Lato';
-    font-size: 1.125em; /* 18px/16 = 1.125 */
-}
+    /* login.html */
+    #logbar {
+        height: 100%;
+        width: 40%;
+        float: right;
+    }
 
-#header {
-    width: 100%;
-    height: 5em; /* 80px/16 = 5 */
-    border-bottom: 0.0625em solid #000000; /* 1px/16 = 0.0625 */
-    background: #ffffff;
-}
-
-#navbar {
-    float: left;
-    height: 1.25em; /* 20px/16 = 1.25 */
-    clear: both;
-}
-
-#logbar {
-    float: right;
-    height:1.25em; /* 20px/16 = 1.25 */
-    clear: both;
-    list-style-type: none;
-    font-size: 0.875em; /* 14px/16 = 0.875 */
-    display: block;
-}
-
-#nav_bar ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-#navbar ul li {
-    list-style-type: none;
-    float: left;
-    padding: 0.625em; /* 10px/16 = 0.625 */
-}
-
-#navbar ul li a {
-    font-size: 0.875em; /* 14px/16 = 0.875 */
-    float: left;
-    display: block;
-    padding: 0 0 0 1.25em; /* 20px/16 = 1.25 */
-}
-
-#banner {
-    background: url(banner_03.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 35em;
-}
-
-#footer {
-    color: black;
-    font-size: 1em; /* 16px/16 = 1 */
-    padding: 1.25em; /* 20px/16 = 1.25 */
-    text-align: center;
-    clear: both;
-    background-color: #FFFFFF;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-}
+/* content related divs */
 
 #title {
-    float: left;
-    padding: 6.25em;
     height: 100%;
+    width: 70%;
+    float: left;
 }
 
 #inputRegister {
-    padding: 7.5em;
-    border: none;
-    display: block;
-    text-align: center;
+    height: 100%;
+    width: 30%;
+    float: right;
 }
 
-#inputRegister input{
-    margin-bottom: 1em; /* 16px/16 = 1 */
-    font-size: 0.875em; /* 14px/16 = 0.875 */
-    position: relative;
-    width: 15em; /* 240px/16 = 15 */
-    height: 1.875em; /* 30px/16 = 0.25 */
-    border-radius: 0.25em; /* 4px/16 = 0.25 */
+/* standard input field */
+
+.inputBar {
+    font-size: 0.875em;
+    width: 100%;
+    box-sizing: border-box;
     border: 0.0625em solid #cfcfcf; /* 1px/16 = 0.0625 */
-    -webkit-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-    -moz-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-    box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-}
-
-#inputRegister input:focus{
     outline: 0;
-    border: 0.0625em solid rgba(43, 43, 43, 0.56); /* 1px/16 = 0.0625 */
-    -webkit-box-shadow: 0 0 0.3125em 0.25em rgb(0, 0, 0); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
-    -moz-box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
-    box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
 }
 
-/* Menügestaltung, Buttons und Dropdownmenue */
+.inputBar input:focus{
+    box-sizing: border-box;
+    border: 0.0625em solid rgba(43, 43, 43, 0.56); /* 1px/16 = 0.0625 */
+    outline: 0;
+}
+
+/* standard button */
 
 .button {
-    position: relative;
+    width: 100%;
     overflow: visible;
     display: inline-block;
-    padding: 0.5em 1em; /* 8px/16 = 0.5 | 16px/16 = 1 */
+    /* padding: 0.5em 1em; /* 8px/16 = 0.5 | 16px/16 = 1 */
+    box-sizing: border-box;
     border: 0.0625em solid #d4d4d4; /* 1px/16 = 0.0625 */
     margin: 0;
     text-decoration: none;
@@ -169,9 +142,7 @@ h3 {
 }
 
 .button:hover,
-.button:focus,
-.button:active,
-.button.active {
+.button:focus {
     border-color: #3072b3;
     border-bottom-color: #2a65a0;
     text-decoration: none;
@@ -202,26 +173,56 @@ h3 {
     border: 0;
 }
 
+/* dropdown menu */
+
+/* TODO: genralise more and get rid of these navbar settings */
+#navbar ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+#navbar ul li {
+    list-style-type: none;
+    float: left;
+    padding: 0.5em;
+}
+
+#navbar ul li a {
+    font-size: 1em;
+    float: left;
+    display: block;
+    padding: 0 0 0 1.25em;
+}
+
 .dropbtn {
     background-color: #FFFFFF;
     color: black;
-    font-size:1.125em; /* 18px/16 = 1.125 */
+    font-size: 1em; /* 18px/16 = 1.125 */
     border: none;
     cursor: pointer;
 }
 
 .dropdown {
-    font-size: 1.125em; /* 18px/16 = 1.125 */
+    font-size: 1em; /* 18px/16 = 1.125 */
     position: relative;
     display: inline-block;
 }
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0);
+}
+
 .dropdown-content {
-    font-size: 1.125em; /* 18px/16 = 1.125 */
+    font-size: 1em; /* 18px/16 = 1.125 */
     display: none;
     position: absolute;
-    background-color: #ffffff;
-    min-width: 10em; /* 160px/16 = 10 */
+    background-color: #dfdfdf;
+    min-width: 12em; /* 160px/16 = 10 */
     box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2); /* 0px/16 = = | 8px/16 = 0.5 | 16px/16 = 1 */
 }
 
@@ -235,35 +236,4 @@ h3 {
 
 .dropdown-content a:hover {
     background-color: #ffffff;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgba(255, 255, 255, 0);
-}
-
-/* Formatierung des Registrationsformulars */
-
-.inputLogbar {
-    margin-right: 0.625em; /* 10px/16 = 0.625 */
-    margin-left: 0.625em; /* 10px/16 = 0.625 */
-    font-size: 0.875em; /* 14px/16 = 0.875 */
-    border-radius: 0.25em; /* 4px/16 = 0.25 */
-    width: 15em; /* 240px/16 = 15 */
-    height: 1.875em; /* 30px/16 = 0.25 */
-    border: 0.0625em solid #cfcfcf; /* 1px/16 = 0.0625 */
-    -webkit-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-    -moz-box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-    box-shadow: inset 0 0 0.25em 0.125em rgba(0,0,0, 0.1); /* 4px/16 = 0.25 | 2px/16 = 0.125 */
-}
-
-.inputLogbar input:focus{
-    outline: 0;
-    border: 0.0625em solid rgba(43, 43, 43, 0.56); /* 1px/16 = 0.0625 */
-    -webkit-box-shadow: 0 0 0.3125em 0.25em rgb(0, 0, 0); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
-    -moz-box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
-    box-shadow: 0 0 0.3125em 0.25em rgba(0, 0, 0, 0.1); /* 5px/16 = 0.3125 | 4px/16 = 0.25 */
 }

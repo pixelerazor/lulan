@@ -15,6 +15,7 @@ def printNav(ind=0):
     content2 = indentNewlines(getFileContent("login.html"), 2) # Add two indentations two match navgigation.html
     sp = content.split('<div id="">\n')
     print(indentNewlines(('<div id="logbar">\n' + content2).join(sp), 3), end='') # Add three indentations two match header.html
+    #print('<div id="header"><div id="navbar"></div><div id="logbar">'+content2+'</div></div>\n')
 
 def printSite(ind=0):
     print(indentNewlines(getFileContent("registration.html"), 3), end='') # Add three indentations two match header.html

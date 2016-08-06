@@ -21,28 +21,65 @@
 import random
 import math
 
-#def teamBuilding(player):
 
-#def winnerBracket():
+def fitPlayerCount(player):
+    playerCount = len(player)
+    if playerCount >= 8:
+        while (math.log(playerCount, 2) % 1) != 0:
+            random.shuffle(player)
+            dropout = player.pop()
+            print("Spieler: ", dropout, "wurde entfernt.")
+            playerCount = len(player)
+            print(playerCount)
+    else:
+        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
 
-#def loserBracket():
+
+
+class teamBuild:
+
+    def teamBuild2(self, player):
+        playerCount = len(player)
+        counter = 0
+        while playerCount > 0:
+            counter += 0
+            playerOne = player.pop()
+            playerTwo = player.pop()
+            team = playerOne.append(playerTwo)
+            print(team)
+
+
+
+def fitPlayerCount(player):
+    playerCount = len(player)
+    if playerCount >= 8:
+        while (math.log(playerCount, 2) % 1) != 0:
+            random.shuffle(player)
+            dropout = player.pop()
+            print("Spieler: ", dropout, "wurde entfernt.")
+            playerCount = len(player)
+            print(playerCount)
+    else:
+        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
+
+
+# def teamBuilding(player):
+
+# def winnerBracket():
+
+# def loserBracket():
 
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
-player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene", "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene","Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene","Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"] # Das hier ist eine Testliste
-playerCount = len(player)
-print("Die Teilnehmerzahl lautet: ", playerCount)
+player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
+          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
+          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
+          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"]
 
-if playerCount >= 8:
-    while (math.log(playerCount, 2) % 1) != 0:
-        random.shuffle(player)
-        dropout = player.pop()
-        print("Spieler: ", dropout, "wurde entfernt.")
-        playerCount = len(player)
-        print(playerCount)
+fitPlayerCount(player)
 
-
-
+team19 = teamBuild()
+team19.teamBuild2(player)
 # 1. Prüfen, der obligatorischen Teilnehmerzahl von 8 Spielern
 
 # 2. Prüfen, ob die Teilnehmerzahl gerade ist
@@ -60,4 +97,3 @@ if playerCount >= 8:
 # 7. Randomisiertes aufeinandertreffen
 
 # 8. Darstellung des Gewinners
-

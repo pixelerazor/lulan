@@ -12,17 +12,20 @@
     font-size: 1em;
 }
 
+/* header.html */
 #header {
     height: 10%;
 }
 
+/* content, various files */
 #banner {
     height: 80%;
-    background: url(banner_03.jpg);
+    background: url(IMG_2824_cut.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
+/* footer.html */
 #footer {
     color: black;
     font-size: 1em; /* 16px/16 = 1 */
@@ -30,7 +33,7 @@
     height: 10%;
 }
 
-/* "No one inspects the spanish inquisition!" */
+/* "Nobody expects the spanish inquisition!" */
 .copyleft {
   display: inline-block;
   transform: rotate(180deg);

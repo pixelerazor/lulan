@@ -19,34 +19,27 @@
 # Beim einfachen K.-o.-System sind hingegen lediglich n-1 Spiele notwendig, also genau halbsoviele; bei einem Rundenturnier wären mindestens n·(n-1)/2 Spiele notwendig.
 
 import random
+import math
 
-def teamBuilding(player):
+#def teamBuilding(player):
 
-def winnerBracket():
+#def winnerBracket():
 
-def loserBracket():
+#def loserBracket():
 
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
-player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"] # Das hier ist eine Testliste
+player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene", "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene","Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene","Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"] # Das hier ist eine Testliste
 playerCount = len(player)
 print("Die Teilnehmerzahl lautet: ", playerCount)
 
 if playerCount >= 8:
-    print("Die notwendige Teilnehmerzahl von mindestens 8 Spielern ist erreicht worden.")
-    print("Prüfe auf eine runde Teilnehmerzahl ...")
-    m = playerCount % 2
-    if m == 0:
-        print("Die Teilnehmerzahl ist rund. Das Turnier findet statt")
-    else:
-        print("Die Teilnehmerzahl ist nicht rund. Ein Spieler wird zufällig ausgewählt und aus dem Turnier entfernt.")
-        print(player)
+    while (math.log(playerCount, 2) % 1) != 0:
         random.shuffle(player)
         dropout = player.pop()
-        print(player)
         print("Spieler: ", dropout, "wurde entfernt.")
-
-
+        playerCount = len(player)
+        print(playerCount)
 
 
 

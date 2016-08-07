@@ -12,4 +12,9 @@ CREATE TABLE lulan.users (
     id INT NOT NULL,
     gameName VARCHAR(90) NULL,
     version VARCHAR(90) NULL,
-    PRIMARY KEY (id);
+    PRIMARY KEY (id));
+
+  CREATE TABLE lulan.turniere (
+    id INT NOT NULL,
+    teamList VARCHAR(90) NULL,
+    PRIMARY KEY (id));

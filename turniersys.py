@@ -20,24 +20,26 @@
 
 import random
 import math
+import sqlite3
 
 class teamBuild:
     def __init__(self):
         self.team = []
         self.team.clear()
 
-    def teamBuild2on2(self, player):
+    def teamBuild2on2(self, player, i):
         a = player.pop()
         b = player.pop()
         self.team.insert(0, a)
         self.team.insert(0, b)
+        self.team.insert(0, i) # Die Variable i steht für die ID bzw. die feststehende Nummer des Teams
+        self.team.insert(3, 0)
 
     def outputTeam(self):
         print(self.team)
 
 def fitPlayerCount(player):
     playerCount = len(player)
-    print(teamCount)
     if playerCount >= 8:
         while (math.log(playerCount, 2) % 1) != 0:
             random.shuffle(player)
@@ -54,18 +56,17 @@ def teamGroup():
         print("The Number of Teams is to high. There are not enough Player to built teams.")
     else:
         for i in range(teamCount):
+            i += 1
             team = teamBuild()
-            team.teamBuild2on2(player)
+            team.teamBuild2on2(player, i)
             team.outputTeam()
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
-player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
-          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
-          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
-          "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"]
+player = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33"]
 
 # Anzahl an Teams angeben und ausgeben
-teamCount = 22
+fitPlayerCount(player)
+teamCount = 12
 teamGroup()
 
 # ---- Ausstehende Aufgaben: -----

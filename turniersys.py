@@ -32,8 +32,7 @@ class teamBuild:
         self.team.insert(0, a)
         self.team.insert(0, b)
 
-    def outputTeam(self):    print(a)
-    print(teamCount)
+    def outputTeam(self):
         print(self.team)
 
 def fitPlayerCount(player):
@@ -52,7 +51,7 @@ def fitPlayerCount(player):
 def teamGroup():
     a = len(player)
     if (teamCount*2) > len(player):
-        print("Number of Teams is to high. There are not enough Player left.")
+        print("The Number of Teams is to high. There are not enough Player to built teams.")
     else:
         for i in range(teamCount):
             team = teamBuild()
@@ -66,7 +65,7 @@ player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "
           "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"]
 
 # Anzahl an Teams angeben und ausgeben
-teamCount = 23
+teamCount = 22
 teamGroup()
 
 # ---- Ausstehende Aufgaben: -----

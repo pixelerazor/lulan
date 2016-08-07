@@ -21,34 +21,42 @@
 import random
 import math
 
-
-def fitPlayerCount(player):
-    playerCount = len(player)
-    if playerCount >= 8:
-        while (math.log(playerCount, 2) % 1) != 0:
-            random.shuffle(player)
-            dropout = player.pop()
-            print("Spieler: ", dropout, "wurde entfernt.")
-            playerCount = len(player)
-            print(playerCount)
-    else:
-        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
-
-
-
 class teamBuild:
+    def __init__(self):
+        self.team = []
+        self.team.clear()
 
-    def teamBuild2(self, player):
-        playerCount = len(player)
-        counter = 0
-        while playerCount > 0:
-            counter += 0
-            playerOne = player.pop()
-            playerTwo = player.pop()
-            team = playerOne.append(playerTwo)
-            print(team)
+    def teamBuild2on2(self, player):
+        a = player.pop()
+        b = player.pop()
+        self.team.insert(0, a)
+        self.team.insert(0, b)
 
+    def outputTeam(self):
+        print(self.team)
 
+def fitPlayerCount(player):
+    playerCount = len(player)
+    print(teamCount)
+    if playerCount >= 8:
+        while (math.log(playerCount, 2) % 1) != 0:
+            random.shuffle(player)
+            dropout = player.pop()
+            print("Spieler: ", dropout, "wurde entfernt.")
+            playerCount = len(player)
+            print(playerCount)
+    else:
+        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
+
+def teamGroup():
+    a = len(player)
+    if (teamCount*2) > len(player):
+        print("Die Anzahl an angegebenen Teams ist zu hoch. Es gibt nicht genug Spieler.")
+    else:
+        for i in range(teamCount):
+            team = teamBuild()
+            team.teamBuild2on2(player)
+            team.outputTeam()
 
 def fitPlayerCount(player):
     playerCount = len(player)
@@ -61,13 +69,6 @@ def fitPlayerCount(player):
             print(playerCount)
     else:
         print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
-
-
-# def teamBuilding(player):
-
-# def winnerBracket():
-
-# def loserBracket():
 
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
@@ -76,17 +77,11 @@ player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "
           "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",
           "Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene"]
 
-fitPlayerCount(player)
+# Anzahl an Teams angeben und ausgeben
+teamCount = 23
+teamGroup()
 
-team19 = teamBuild()
-team19.teamBuild2(player)
-# 1. Prüfen, der obligatorischen Teilnehmerzahl von 8 Spielern
-
-# 2. Prüfen, ob die Teilnehmerzahl gerade ist
-#       -> zufälliges entfernen eines Spielers bei ungerader Teilnehmerzahl
-
-# 3. Ransomisierte Teambildung
-
+# ---- Ausstehende Aufgaben: -----
 
 # 4. Anlegen zweier Klassen: Winnder- und Loserbrackets
 

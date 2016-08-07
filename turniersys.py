@@ -32,7 +32,8 @@ class teamBuild:
         self.team.insert(0, a)
         self.team.insert(0, b)
 
-    def outputTeam(self):
+    def outputTeam(self):    print(a)
+    print(teamCount)
         print(self.team)
 
 def fitPlayerCount(player):
@@ -42,34 +43,21 @@ def fitPlayerCount(player):
         while (math.log(playerCount, 2) % 1) != 0:
             random.shuffle(player)
             dropout = player.pop()
-            print("Spieler: ", dropout, "wurde entfernt.")
+            print("Player: ", dropout, "was removed.")
             playerCount = len(player)
             print(playerCount)
     else:
-        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
+        print("Players missing: " + str(8 - playerCount) + " Player")
 
 def teamGroup():
     a = len(player)
     if (teamCount*2) > len(player):
-        print("Die Anzahl an angegebenen Teams ist zu hoch. Es gibt nicht genug Spieler.")
+        print("Number of Teams is to high. There are not enough Player left.")
     else:
         for i in range(teamCount):
             team = teamBuild()
             team.teamBuild2on2(player)
             team.outputTeam()
-
-def fitPlayerCount(player):
-    playerCount = len(player)
-    if playerCount >= 8:
-        while (math.log(playerCount, 2) % 1) != 0:
-            random.shuffle(player)
-            dropout = player.pop()
-            print("Spieler: ", dropout, "wurde entfernt.")
-            playerCount = len(player)
-            print(playerCount)
-    else:
-        print("Players missing: " + str(8 - playerCount) + " Teilnehmer")
-
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
 player = ["Peter", "Hans", "Wurst", "Knut", "Albrecht", "Kathrin", "Sonstwas", "Detlef", "Sammy", "Dieter", "Bene",

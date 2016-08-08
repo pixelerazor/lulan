@@ -23,52 +23,86 @@ import random
 import math
 import sqlite3
 
-class teamBuild:
+# Unused as of now
+class Player:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+# class for holding the team
+class Team:
+    # initialise the list
     def __init__(self):
-        self.team = []
-        self.team.clear()
+        self.players = []
 
-    def teamBuild2on2(self, player, i):
-        a = player.pop()
-        b = player.pop()
-        self.team.insert(0, a)
-        self.team.insert(0, b)
-        self.team.insert(0, i) # Die Variable i steht für die ID bzw. die feststehende Nummer des Teams
-        self.team.insert(3, 0)
+    # return player array as string when bare object name is called
+    def __repr__(self):
+        return str(self.players)
 
-    def outputTeam(self):
-        print(self.team)
+    # add a player to the team list. this is called by other classes creating teams to fill them.
+    def addPlayer(self, player):
+        self.players.append(player)
 
-def fitPlayerCount(player):
-    playerCount = len(player)
-    if playerCount >= 8:
-        while (math.log(playerCount, 2) % 1) != 0:
-            random.shuffle(player)
-            dropout = player.pop()
-            print("Player: ", dropout, "was removed.")
-            playerCount = len(player)
-            print(playerCount)
-    else:
-        print("Players missing: " + str(8 - playerCount) + " Player")
+class TeamBuild:
+    def __init__(self, players, teamSize):
+        self.teams = []
+        # Make sure player number is correct for team size
+        while ((len(players) % teamSize) > 0):
+            random.shuffle(players)
+            dropout = players.pop()
+            print("Too many players. Removed ", dropout, "<br>")
+        # While there are players, create new teams
+        while (len(players) > 0):
+            newTeam = Team()
+            # Add players to the current team
+            for x in range(0, teamSize):
+                random.shuffle(players)
+                newMember = players.pop()
+                newTeam.addPlayer(newMember)
+            # Add the team
+            self.teams.append(newTeam)
 
-def teamGroup():
-    a = len(player)
-    if (teamCount*2) > len(player):
-        print("The Number of Teams is to high. There are not enough Player to built teams.")
-    else:
-        for i in range(teamCount):
-            i += 1
-            team = teamBuild()
-            team.teamBuild2on2(player, i)
-            team.outputTeam()
+    def outputTeams(self):
+        for team in self.teams:
+            print(team, "<br>")
+
+    def fitKoTeamCount(self, minTeams=4):
+        teamCount = len(self.teams)
+        if teamCount >= minTeams:
+            while (math.log(teamCount, 2) % 1) != 0:
+                random.shuffle(self.teams)
+                dropout = self.teams.pop()
+                print("Team: ", dropout, "was removed.<br>")
+                teamCount = len(self.teams)
+        else:
+            print("Need at least: " + str(minTeams - teamCount))
 
 # Spieler werden aus der SQL-Datenbank in eine Liste importiert.
-player = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33"]
+players = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+           "19","20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33"]
 
 # Anzahl an Teams angeben und ausgeben
-fitPlayerCount(player)
-teamCount = 12
-teamGroup()
+print("Content-Type: text/html\n")
+print("<!DOCTYPE html>")
+print("<h2>Team1 (5 players):</h2>")
+team1 = TeamBuild(players, 5)
+print("<h3>See teams:</h3>")
+team1.outputTeams()
+print("<h3>Switch to KO (minTeams=4):</h3>")
+team1.fitKoTeamCount()
+print("<h3>See teams:</h3>")
+team1.outputTeams()
+
+players = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+           "19","20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33"]
+print("<h2>Team2 (3 players):</h2>")
+team2 = TeamBuild(players, 3)
+print("<h3>See teams:</h3>")
+team2.outputTeams()
+print("<h3>Switch to KO (minTeams=8):</h3>")
+team2.fitKoTeamCount(8)
+print("<h3>See teams:</h3>")
+team2.outputTeams()
 
 # ---- Ausstehende Aufgaben: -----
 

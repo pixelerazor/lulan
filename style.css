@@ -9,18 +9,14 @@ body {
 #container {
     min-width: 62em;
     min-height: 44em;
-    /*width: 100%;
-    height: 54em;*/
     background: #ffffff;
     color: black;
     text-decoration: none;
     font-family: Impact, Charcoal, sans-serif;
-    font-size: 1em;*/
+    font-size: 1em;
 }
 
 .center {
-    /*border: solid 1px;
-    border-color: grey;*/
     box-sizing: border-box;
     background: url(/images/IMG_2824_cut.jpg);
     background-repeat: no-repeat;
@@ -30,28 +26,27 @@ body {
 }
 
 .center h1 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 3.75em; /* 60px/16 = 3.75 */
+    font-size: 3.75em;
     font-weight: 200;
 }
 
 .center h2 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 1.75em; /* 28px/16 = 1.75 */
+    font-size: 1.75em;
     font-weight: 200;
 }
 
 .center h3 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
+    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
     color: white;
-    font-size: 1.125em; /* 18px/16 = 1.125 */
+    font-size: 1.125em;
     font-weight: 200;
 }
 
 .topbot {
-    /*border: solid 1px;*/
     box-sizing: border-box;
     width: 100%;
     height: 10%;
@@ -61,8 +56,6 @@ body {
 }
 
 .col1{
-    /*border:solid 1px;
-    border-color: yellow;*/
     box-sizing: border-box;
     float: left;
     width: 65%;
@@ -70,8 +63,6 @@ body {
 }
 
 .col2 {
-    /*border:solid 1px;
-    border-color: blue;*/
     box-sizing: border-box;
     float: right;
     width: 35%;
@@ -106,13 +97,13 @@ body {
     font-size: 0.875em;
     width: 100%;
     box-sizing: border-box;
-    border: 0.0625em solid #cfcfcf; /* 1px/16 = 0.0625 */
+    border: 0.0625em solid #cfcfcf;
     outline: 0;
 }
 
 .inputBar input:focus{
     box-sizing: border-box;
-    border: 0.0625em solid rgba(43, 43, 43, 0.56); /* 1px/16 = 0.0625 */
+    border: 0.0625em solid rgba(43, 43, 43, 0.56);
     outline: 0;
 }
 
@@ -123,12 +114,12 @@ body {
     overflow: visible;
     display: inline-block;
     box-sizing: border-box;
-    border: 0.0625em solid #d4d4d4; /* 1px/16 = 0.0625 */
+    border: 0.0625em solid #d4d4d4;
     margin: 0;
     text-decoration: none;
     text-align: center;
-    text-shadow: 0.0625em 0.0625em 0 #fff; /* 1px/16 = 0.0625 */
-    font-size: 1em; /* 16px/16 = 1 */
+    text-shadow: 0.0625em 0.0625em 0 #fff;
+    font-size: 1em;
     color: #333;
     white-space: nowrap;
     cursor: pointer;
@@ -152,7 +143,7 @@ body {
     border-color: #3072b3;
     border-bottom-color: #2a65a0;
     text-decoration: none;
-    text-shadow: -0.0625em -0.0625em 0 rgba(0,0,0,0.3); /* 1px/16 = 0.0625 */
+    text-shadow: -0.0625em -0.0625em 0 rgba(0,0,0,0.3);
     color: #fff;
     background-color: #3c8dde;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
@@ -204,13 +195,13 @@ body {
 .dropbtn {
     background-color: #FFFFFF;
     color: black;
-    font-size: 1em; /* 18px/16 = 1.125 */
+    font-size: 1em;
     border: none;
     cursor: pointer;
 }
 
 .dropdown {
-    font-size: 1em; /* 18px/16 = 1.125 */
+    font-size: 1em;
     position: relative;
     display: inline-block;
 }
@@ -224,18 +215,18 @@ body {
 }
 
 .dropdown-content {
-    font-size: 1em; /* 18px/16 = 1.125 */
+    font-size: 1em;
     display: none;
     position: absolute;
     background-color: #dfdfdf;
-    min-width: 12em; /* 160px/16 = 10 */
-    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2); /* 0px/16 = = | 8px/16 = 0.5 | 16px/16 = 1 */
+    min-width: 12em;
+    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
 }
 
 .dropdown-content a {
-    font-size: 1.125em; /* 18px/16 = 1.125 */
+    font-size: 1.125em;
     color: black;
-    padding: 1em 1em; /* 16px/16 = 1 */
+    padding: 1em 1em;
     text-decoration: none;
     display: block;
 }

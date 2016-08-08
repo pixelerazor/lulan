@@ -20,7 +20,7 @@
 /* content, various files */
 #banner {
     height: 80%;
-    background: url(IMG_2824_cut.jpg);
+    background: url(/images/IMG_2824_cut.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

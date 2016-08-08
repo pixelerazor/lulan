@@ -7,7 +7,7 @@ def indentNewlines(code, num=0):
 
 def printHeader(ind=0):
     print("Content-Type: text/html\n")
-    print("<!DOCTYPE html>")
+    #print("<!DOCTYPE html>")
     print(getFileContent("html/header.html"), end='')
 
 def printNav(ind=0):

@@ -1,70 +1,87 @@
-/* divs for general layout */
-
-#container {
-    min-width: 58em;
-    min-height: 44em;
-    height: 44em;
-    background: #ffffff;
-    margin: 0 auto;
-    margin: 0;
-    color: black;
-    text-decoration: none;
-    font-family: Impact, Charcoal, sans-serif;
-    font-size: 1em;
-}
-
-/* header.html */
-#header {
-    height: 10%;
-}
-
-/* content, various files */
-#banner {
-    height: 80%;
-    background: url(/images/IMG_2824_cut.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* footer.html */
-#footer {
-    color: black;
-    font-size: 1em; /* 16px/16 = 1 */
-    text-align: center;
-    height: 10%;
-}
-
-/* "Nobody expects the spanish inquisition!" */
-.copyleft {
-  display: inline-block;
-  transform: rotate(180deg);
-}
-
 /* base html elements */
 
 body {
     margin: 0;
 }
 
-h1 {
+/* divs for general layout */
+
+#container {
+    min-width: 62em;
+    min-height: 44em;
+    /*width: 100%;
+    height: 54em;*/
+    background: #ffffff;
+    color: black;
+    text-decoration: none;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1em;*/
+}
+
+.center {
+    /*border: solid 1px;
+    border-color: grey;*/
+    box-sizing: border-box;
+    background: url(/images/IMG_2824_cut.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 80%;
+}
+
+.center h1 {
     text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
     color: white;
     font-size: 3.75em; /* 60px/16 = 3.75 */
     font-weight: 200;
 }
 
-h2 {
+.center h2 {
     text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
     color: white;
     font-size: 1.75em; /* 28px/16 = 1.75 */
     font-weight: 200;
 }
 
-h3 {
+.center h3 {
     text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000; /* 5px/16 = 0.3125 | 8px/16 = 0.5 */
     color: white;
     font-size: 1.125em; /* 18px/16 = 1.125 */
     font-weight: 200;
+}
+
+.topbot {
+    /*border: solid 1px;*/
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+.col1{
+    /*border:solid 1px;
+    border-color: yellow;*/
+    box-sizing: border-box;
+    float: left;
+    width: 65%;
+    height: 100%;
+}
+
+.col2 {
+    /*border:solid 1px;
+    border-color: blue;*/
+    box-sizing: border-box;
+    float: right;
+    width: 35%;
+    height: 100%;
+}
+
+/* "Nobody expects the spanish inquisition!" */
+.copyleft {
+  display: inline-block;
+  transform: rotate(180deg);
 }
 
 /* header related divs */
@@ -82,20 +99,6 @@ h3 {
         width: 40%;
         float: right;
     }
-
-/* content related divs */
-
-#title {
-    height: 100%;
-    width: 70%;
-    float: left;
-}
-
-#inputRegister {
-    height: 100%;
-    width: 30%;
-    float: right;
-}
 
 /* standard input field */
 
@@ -119,7 +122,6 @@ h3 {
     width: 100%;
     overflow: visible;
     display: inline-block;
-    /* padding: 0.5em 1em; /* 8px/16 = 0.5 | 16px/16 = 1 */
     box-sizing: border-box;
     border: 0.0625em solid #d4d4d4; /* 1px/16 = 0.0625 */
     margin: 0;
@@ -180,11 +182,11 @@ h3 {
 /* dropdown menu */
 
 /* TODO: genralise more and get rid of these navbar settings */
-#navbar ul {
+/*#navbar ul {
     margin:0;
     padding:0;
     list-style-type:none;
-}
+}*/
 
 #navbar ul li {
     list-style-type: none;

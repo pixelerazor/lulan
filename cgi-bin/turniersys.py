@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Double-k.o Planung:
 # Regeln/Bedingungen:
 # 1. Turnier teilt sich von Beginn an in zwei Brackets. Winnerbracket und Loserbracket.

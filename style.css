@@ -193,7 +193,7 @@ body {
 
 #menuh
     { padding: 0; border: none;
-    font-size: 1.25em;
+    font-size: 1.125em;
     width:100%;
     float:left;
     margin:0.0625em 0;
@@ -212,13 +212,12 @@ body {
 #menuh a, #menuh a:visited    /* menu at rest */
     {
     color: white;
-    background-color: #ffffff;
     text-decoration:none;
     }
 
 #menuh a:hover    /* menu at mouse-over  */
     {
-    border: 0.0625em solid darkgrey;
+    border: 0.125em solid darkgrey;
     text-decoration: none;
     color: white;
     background-color: #ffffff;

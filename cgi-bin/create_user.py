@@ -61,6 +61,8 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
 # Input valid, create the user
 # TODO: write to DB instead of HTML
 else:
+    print("Content-Type: text/html\n")
+    print("<!DOCTYPE html>")
     print("<p>")
     print("Benutzer angelegt: "+form["nickName"].value+"<br>\n")
     print("Passwort: "+form["password1"].value+"<br>\n")
@@ -69,7 +71,7 @@ else:
     else:
         print("Kein Vorname<br>\n")
     if "lastName" in form:
-        print("Nachname: "+form["lastName"].value+"</p>\n")
+        print("Nachname: "+form["lastName"].value+"\n")
     else:
         print("Kein Nachname<br>\n")
     print("</p>")

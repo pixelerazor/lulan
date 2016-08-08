@@ -2,6 +2,30 @@
 
 body {
     margin: 0;
+    text-shadow: 0.0625em 0.0625em 0 #000,
+    -0.0625em 0.0625em 0 #000,
+    0.0625em -0.0625em 0 #000,
+    -0.0625em -0.0625em 0 #000,
+    0 0.0625em 0 #000,
+    0 -0.0625em 0 #000,
+    -0.0625em 0 0 #000,
+    0.0625em 0 0 #000,
+    0.125em 0.125em 0 #000,
+    -0.125em 0.125em 0 #000,
+    0.125em -0.125em 0 #000,
+    -0.125em -0.125em 0 #000,
+    0 0.125em 0 #000,
+    0 -0.125em 0 #000,
+    -0.125em 0 0 #000,
+    0.125em 0 0 #000,
+    0.0625em 0.125em 0 #000,
+    -0.0625em 0.125em 0 #000,
+    0.0625em -0.125em 0 #000,
+    -0.0625em -0.125em 0 #000,
+    0.125em 0.0625em 0 #000,
+    -0.125em 0.0625em 0 #000,
+    0.125em -0.0625em 0 #000,
+    -0.125em -0.0625em 0 #000;
 }
 
 /* divs for general layout */
@@ -26,21 +50,21 @@ body {
 }
 
 .center h1 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
+    /*text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;*/
     color: white;
     font-size: 3.75em;
     font-weight: 200;
 }
 
 .center h2 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
+    /*text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;*/
     color: white;
     font-size: 1.75em;
     font-weight: 200;
 }
 
 .center h3 {
-    text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;
+    /*text-shadow: 0 0 0.3125em #000000, 0 0 0.5em #000000;*/
     color: white;
     font-size: 1.125em;
     font-weight: 200;
@@ -75,22 +99,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* header related divs */
-
-    /* navigation.html */
-    #navbar {
-        height: 100%;
-        width: 60%;
-        float: left;
-    }
-
-    /* login.html */
-    #logbar {
-        height: 100%;
-        width: 40%;
-        float: right;
-    }
-
 /* standard input field */
 
 .inputBar {
@@ -118,7 +126,7 @@ body {
     margin: 0;
     text-decoration: none;
     text-align: center;
-    text-shadow: 0.0625em 0.0625em 0 #fff;
+    text-shadow: 0.0625em 0.0625em 0 #ddd;
     font-size: 1em;
     color: #333;
     white-space: nowrap;
@@ -172,65 +180,117 @@ body {
 
 /* dropdown menu */
 
-/* TODO: genralise more and get rid of these navbar settings */
-/*#navbar ul {
+/*Source: http://www.wickham43.net/tutorial.css*/
+/*DROPDOWN MENUS - HORIZONTAL*/
+
+#menuh-container
+    {
+    padding: 0; border: none;
+    position:  relative;
+    top: 1em;
+    left: 0;
+    }
+
+#menuh
+    { padding: 0; border: none;
+    font-size: 1.25em;
+    width:100%;
+    float:left;
+    margin:0.0625em 0;
+    }
+
+#menuh a
+    {
+    text-align: center;
+    display:block;
+    border: 0.0625em solid white;
+    white-space:nowrap;
+    margin:0;
+    padding: 0.0625em;
+    }
+
+#menuh a, #menuh a:visited    /* menu at rest */
+    {
+    color: white;
+    background-color: #ffffff;
+    text-decoration:none;
+    }
+
+#menuh a:hover    /* menu at mouse-over  */
+    {
+    border: 0.0625em solid darkgrey;
+    text-decoration: none;
+    color: white;
+    background-color: #ffffff;
+    }
+
+#menuh ul
+    {
+    list-style-type:none;
     margin:0;
     padding:0;
-    list-style-type:none;
-}*/
+    float:left;
+    width: 7em;    /* width of all menu boxes */
+    }
 
-#navbar ul li {
-    list-style-type: none;
-    float: left;
-    padding: 0.5em;
+#menuh ul ul a {
+    width: 100%;
+    background-color: #dddddd;
+    text-align: left;
+    padding-left: 1em;
 }
-
-#navbar ul li a {
-    font-size: 1em;
-    float: left;
-    display: block;
-    padding: 0 0 0 1.25em;
-}
-
-.dropbtn {
-    background-color: #FFFFFF;
-    color: black;
-    font-size: 1em;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown {
-    font-size: 1em;
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgba(255, 255, 255, 0);
-}
-
-.dropdown-content {
-    font-size: 1em;
-    display: none;
-    position: absolute;
-    background-color: #dfdfdf;
-    min-width: 12em;
-    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-    font-size: 1.125em;
-    color: black;
-    padding: 1em 1em;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
+#menuh ul ul a:hover{
+    padding-left: 2em;
     background-color: #ffffff;
 }
+
+#menuh ul ul a:hover::before {
+    content: '\2022  ';
+}
+
+
+#menuh li
+    {
+    position:relative;
+    }
+
+#menuh ul ul
+    {
+    position:relative;
+    z-index:500;
+    top:auto;
+    display:none;
+    padding: 1em;
+    margin:-1em 0 0 -1em;
+    width: 12em;
+    }
+
+#menuh ul ul ul
+    {
+    top:0;
+    left:100%;
+    }
+
+div#menuh li:hover
+    {
+    cursor:pointer;
+    z-index:100;
+    }
+
+div#menuh li:hover ul ul,
+div#menuh li li:hover ul ul,
+div#menuh li li li:hover ul ul,
+div#menuh li li li li:hover ul ul
+    {
+    display:none;
+    }
+
+div#menuh li:hover ul,
+div#menuh li li:hover ul,
+div#menuh li li li:hover ul,
+div#menuh li li li li:hover ul
+    {
+    display:block;
+    }
+
+/*end of dropdown menus - horizontal*/

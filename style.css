@@ -1,7 +1,8 @@
 /* divs for general layout */
 
 #container {
-    /*width: 64em;*/
+    min-width: 58em;
+    min-height: 44em;
     height: 44em;
     background: #ffffff;
     margin: 0 auto;

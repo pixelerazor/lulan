@@ -31,10 +31,10 @@ body {
 /* divs for general layout */
 
 #container {
-    min-width: 62em;
+    min-width: 66em;
     min-height: 44em;
     background: #ffffff;
-    color: black;
+    color: white;
     text-decoration: none;
     font-family: Impact, Charcoal, sans-serif;
     font-size: 1em;

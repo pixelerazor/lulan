@@ -28,6 +28,7 @@ def gamesHtml():
     print('    <p><button type="submit" class="button">Save</button></p>')
     print("  </fieldset>")
 
+#Definitions that get the Data from the form in reg_games
 def getFormData(y):
     form = cgi.FieldStorage()
     for i in y:
@@ -45,5 +46,6 @@ file.close()
 #printFooter()
 getFormData(y)
 
+#TODO: Solve the Problem with the missing file links
 #TODO: Maybe add a "Add games" button
 

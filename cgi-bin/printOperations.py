@@ -47,7 +47,7 @@ def printNav(indent=0):
     sp = content.split('<!-- menu -->\n')
     indent1 = getIndentLevel(sp[0])
     content2 = indentNewlines(getFileContent("html/login.html"), indent1)
-    print(indentNewlines(('<div style="width: 40%; float: right;">\n' + content2 + "</div>\n").join(sp), indent), end='')
+    print(indentNewlines((content2).join(sp), indent), end='')
     return indent
 
 def printSite(args, indent=0):

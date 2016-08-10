@@ -1,0 +1,59 @@
+<div class="center">
+    <div style="height: 10%; width: 100%;">
+        <form method="post" action="http://localhost:8000/cgi-bin/index.py?site=chat" >
+            <div style="width: 10%; float: left;  padding-left: 1em; padding-top: 1em;"><input class="button" type="submit" value="send"></div>
+            <div style="max-width: 84,318181818%; float: left; padding-left: 1em; padding-top: 1em;">
+                <input type="text" name="name" value="{}" size="10">
+                <input type="text" name="message" size="100" autofocus="autofocus">
+            </div>
+        </form>
+    </div>
+    <div class="chat" style="max-height: 90%; width: 100%; font-size: 1em; padding: 0em; overflow-y: auto; padding: 0; font-family: 'Lucida Console', Monaco, monospace;">
+        <script>
+            var ws = new WebSocket("ws://127.0.0.1:8002/"),
+                messages = document.createElement('ul'),
+                length = 0,
+                chat = document.getElementsByClassName('chat')[0];
+            chat.appendChild(messages);
+            ws.onmessage = function (event) {
+                var newMessages = event.data.split(";"),
+                    newLength = newMessages.length,
+                    messages = document.getElementsByTagName('ul')[10];
+                if (newMessages.length == 0) {
+                    newMessages = event.data;
+                }
+                if (newLength > length) {
+                    length = newLength;
+                    while (messages.lastChild) {
+                        messages.removeChild(messages.lastChild);
+                    }
+                    for (i = 0; i<length; i++) {
+                        var message = document.createElement('li'),
+                            content = newMessages[i].split(","),
+                            date = document.createTextNode(content[0]),
+                            name = document.createTextNode(content[1]),
+                            messageBody = document.createTextNode(content[2]),
+                            delim1 = document.createTextNode(" "),
+                            delim2 = document.createTextNode(": ");
+                        message.style.cssText = "list-style-type:none;";
+                        var span1 = document.createElement('span');
+                        span1.style.cssText = "color: lightgrey;";
+                        span1.appendChild(date);
+                        span1.appendChild(delim1);
+                        messages.appendChild(span1);
+                        var span2 = document.createElement('span');
+                        span2.style.cssText = "color: lightgreen;";
+                        span2.appendChild(name);
+                        span2.appendChild(delim2);
+                        messages.appendChild(span2);
+                        var span3 = document.createElement('span');
+                        span3.style.cssText = "color:white;";
+                        span3.appendChild(messageBody);
+                        messages.appendChild(span3);
+                        messages.appendChild(message);
+                    }
+                }
+            };
+        </script>
+    </div>
+</div>

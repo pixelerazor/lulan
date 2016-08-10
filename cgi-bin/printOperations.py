@@ -1,4 +1,6 @@
 from fileOperations import getFileContent
+import asyncio
+import websockets
 
 def indentNewlines(code, num=0):
     sp = code.split("\n")
@@ -48,7 +50,24 @@ def printNav(indent=0):
     print(indentNewlines(('<div style="width: 40%; float: right;">\n' + content2 + "</div>\n").join(sp), indent), end='')
     return indent
 
-def printSite(indent=0, args):
-    # when not logged in:
-    print(indentNewlines(getFileContent("html/registration.html"), indent), end='') # Add three indentations to match header.html
-    return indent
+def printSite(args, indent=0):
+    site = ""
+    if "site" not in args.keys() or args["site"].value == "registration":
+        # when not logged in:
+        print(indentNewlines(getFileContent("html/registration.html"), indent), end='') # Add three indentations to match header.html
+        return indent
+    else:
+        site = args["site"].value
+    if site == "chat":
+        name = ""
+        if "name" not in args.keys():
+            name = "anon"
+        else:
+            name = args["name"].value
+        if "message" in args.keys():
+            async def hello():
+                async with websockets.connect('ws://localhost:8001') as websocket:
+                    await websocket.send((name + "," + args["message"].value))
+            asyncio.get_event_loop().run_until_complete(hello())
+        content = getFileContent("html/chat.html")
+        print(indentNewlines((content.replace("{}", name)), indent), end='')

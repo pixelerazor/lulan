@@ -1,16 +1,11 @@
 #!/usr/bin/python3
+import cgi
 import os
 import re
 from printOperations import *
 
-printHeader()
-printNav()
-printSite()
+indent = printHeader()
+_ = printNav(indent)
+args = cgi.FieldStorage()
+_ = printSite(indent, args)
 printFooter()
-
-"""uri = os.environ["REQUEST_URI"]
-site = re.findall("site=(\w*)", uri, re.ASCII)
-if site != []:
-    site = site[0]
-else:
-"""

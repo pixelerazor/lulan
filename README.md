@@ -1,6 +1,6 @@
 #lulan
 
-A webinterface for organising LAN parties.
+A web interface for organising LAN parties.
 
 #Usage
 

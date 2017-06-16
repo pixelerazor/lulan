@@ -21,8 +21,8 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
     content = "\t\t<h3>Input missing or wrong!</h3>\n<form".join(sp)
     # Error for missing nickName
     if ("nickName" not in form):
-        sp = content.split("Nickname ...")
-        content = "MISSING: Nickname".join(sp)
+        sp = content.split("nickName ...")
+        content = "MISSING: nickName".join(sp)
     # Fill in nickName if found
     else:
         sp = content.split('name="nickName"')
@@ -75,3 +75,5 @@ else:
     else:
         print("Kein Nachname<br>\n")
     print("</p>")
+
+

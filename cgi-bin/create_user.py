@@ -89,7 +89,7 @@ VALUES ("""+form["firstName"].value+""", """+form["lastName"].value+""", """+for
 # Execute the user creation
 cursor.execute(sql_command)
 
-# Test, ob es funzt ...
+# Test, ob es funzt
 cursor = connection.cursor()
 
 cursor.execute("SELECT * FROM user")

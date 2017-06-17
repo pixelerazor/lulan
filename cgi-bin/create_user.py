@@ -81,37 +81,15 @@ connection = sqlite3.connect("user.db")
 # Connect to database and set the cursor
 cursor = connection.cursor()
 
-# Create table in database
-sql_command = """
-CREATE TABLE user (
-userID INTEGER PRIMARY KEY,
-FIRSTNAME VARCHAR(30),
-LASTNAME VARCHAR(30),
-NICKNAME VARCHAR(30),
-GAMES VARCHAR(99999),
-PASSWORD VARCHAR(30),
-);"""
-
-# Execute table creation
-cursor.execute(sql_command)
-
 # Add new user to table
-sql.command = """INSERT INTO user
-(FIRSTNAME, LASTNAME, NICKNAME, GAMES, PASSWORD)
+sql_command = """INSERT INTO user
+(FIRSTNAME, LASTNAME, NICKNAME, PASSWORD)
 VALUES ("""+form["firstName"].value+""", """+form["lastName"].value+""", """+form["nickName"].value+""", """+form["password1"].value+""");"""
 
 # Execute the user creation
 cursor.execute(sql_command)
 
-# Close connection to database
-connection.commit()
-connection.close()
-
-
-
-# Test: get information from database
-connection = sqlite3.connect("user.db")
-
+# Test, ob es funzt ...
 cursor = connection.cursor()
 
 cursor.execute("SELECT * FROM user")
@@ -120,3 +98,6 @@ result = cursor.fetchall()
 for r in result:
     print(r)
 
+# Close connection to database
+connection.commit()
+connection.close()

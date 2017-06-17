@@ -63,41 +63,45 @@ else:
     print("Content-Type: text/html\n")
     print("<!DOCTYPE html>")
     print("<p>")
-    print("Benutzer angelegt: "+form["nickName"].value+"<br>\n")
+    print("Benutzer wird angelegt: "+form["nickName"].value+"<br>\n")
     print("Passwort: "+form["password1"].value+"<br>\n")
+    # These variables only get filled if there were values for them in the form
+    firstName = ""
+    lastName = ""
     if "firstName" in form:
         print("Vorname: "+form["firstName"].value+"<br>\n")
+        firstName = form["firstName"].value
     else:
         print("Kein Vorname<br>\n")
     if "lastName" in form:
         print("Nachname: "+form["lastName"].value+"\n")
+        lastName = form["lastName"].value
     else:
         print("Kein Nachname<br>\n")
     print("</p>")
 
-# Establish Database
-connection = sqlite3.connect("user.db")
+    try:
+        # Establish Database
+        connection = sqlite3.connect("cgi-bin/user.db")
 
-# Connect to database and set the cursor
-cursor = connection.cursor()
+        # Connect to database and set the cursor
+        cursor = connection.cursor()
 
-# Add new user to table
-sql_command = """INSERT INTO user
-(FIRSTNAME, LASTNAME, NICKNAME, PASSWORD)
-VALUES ("""+form["firstName"].value+""", """+form["lastName"].value+""", """+form["nickName"].value+""", """+form["password1"].value+""");"""
+        # Execute the user creation
+        params = (firstName, lastName, form["nickName"].value, form["password1"].value)
+        cursor.execute("INSERT INTO user (FIRSTNAME, LASTNAME, NICKNAME, PASSWORD) VALUES (?, ?, ?, ?);", params)
 
-# Execute the user creation
-cursor.execute(sql_command)
+        # Test, ob es funzt
+        cursor = connection.cursor()
 
-# Test, ob es funzt
-cursor = connection.cursor()
+        cursor.execute("SELECT * FROM user")
+        print("Komplette Tabelle ausgeben:")
+        result = cursor.fetchall()
+        for r in result:
+            print(r)
 
-cursor.execute("SELECT * FROM user")
-print("Komplette Tabelle ausgeben:")
-result = cursor.fetchall()
-for r in result:
-    print(r)
-
-# Close connection to database
-connection.commit()
-connection.close()
+        # Close connection to database
+        connection.commit()
+        connection.close()
+    except sqlite3.IntegrityError:
+        print("<p>\nFehler! Benutzername ist bereits vergeben!\n</p>")

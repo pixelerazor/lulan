@@ -8,7 +8,7 @@ cursor = connection.cursor()
 
 # Create table in database
 sql_command = """
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS user (
 FIRSTNAME VARCHAR(30),
 LASTNAME VARCHAR(30),
 NICKNAME VARCHAR(30) PRIMARY KEY,
@@ -20,9 +20,9 @@ cursor.execute(sql_command)
 
 # Create table in database
 sql_command2 = """
-CREATE TABLE games (
-GAMEID VARCHAR(10) PRIMARY KEY,
-GAMENAME VARCHAR(60),
+CREATE TABLE IF NOT EXISTS games (
+GAMEID UNSIGNED INT(10) PRIMARY KEY,
+GAMENAME VARCHAR(60)
 );"""
 
 # Execute table creation

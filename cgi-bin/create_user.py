@@ -82,7 +82,7 @@ else:
 
     try:
         # Establish Database
-        connection = sqlite3.connect("cgi-bin/user.db")
+        connection = sqlite3.connect("cgi-bin/lulan.db")
 
         # Connect to database and set the cursor
         cursor = connection.cursor()
@@ -90,15 +90,6 @@ else:
         # Execute the user creation
         params = (firstName, lastName, form["nickName"].value, form["password1"].value)
         cursor.execute("INSERT INTO user (FIRSTNAME, LASTNAME, NICKNAME, PASSWORD) VALUES (?, ?, ?, ?);", params)
-
-        # Test: Read full content out of database
-        cursor = connection.cursor()
-
-        cursor.execute("SELECT * FROM user")
-        print("Komplette Tabelle ausgeben:")
-        result = cursor.fetchall()
-        for r in result:
-            print(r)
 
         # Close connection to database
         connection.commit()

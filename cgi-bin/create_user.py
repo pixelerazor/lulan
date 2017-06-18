@@ -91,7 +91,7 @@ else:
         params = (firstName, lastName, form["nickName"].value, form["password1"].value)
         cursor.execute("INSERT INTO user (FIRSTNAME, LASTNAME, NICKNAME, PASSWORD) VALUES (?, ?, ?, ?);", params)
 
-        # Test, ob es funzt
+        # Test: Read full content out of database
         cursor = connection.cursor()
 
         cursor.execute("SELECT * FROM user")

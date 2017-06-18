@@ -89,7 +89,7 @@ else:
 
         # Execute the user creation
         params = (firstName, lastName, form["nickName"].value, form["password1"].value)
-        cursor.execute("INSERT INTO user (FIRSTNAME, LASTNAME, NICKNAME, PASSWORD) VALUES (?, ?, ?, ?);", params)
+        cursor.execute("INSERT INTO user (firstname, lastname, nickname, password) VALUES (?, ?, ?, ?);", params)
 
         # Close connection to database
         connection.commit()

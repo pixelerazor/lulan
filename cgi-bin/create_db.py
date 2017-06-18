@@ -9,10 +9,10 @@ cursor = connection.cursor()
 # Create table in database
 sql_command = """
 CREATE TABLE IF NOT EXISTS user (
-FIRSTNAME VARCHAR(30),
-LASTNAME VARCHAR(30),
-NICKNAME VARCHAR(30) PRIMARY KEY,
-PASSWORD VARCHAR(60)
+firstname VARCHAR(30),
+lastname VARCHAR(30),
+nickname VARCHAR(30) PRIMARY KEY,
+password VARCHAR(60)
 );"""
 
 # Execute table creation
@@ -21,8 +21,8 @@ cursor.execute(sql_command)
 # Create table in database
 sql_command2 = """
 CREATE TABLE IF NOT EXISTS games (
-GAMEID UNSIGNED INT(10) PRIMARY KEY,
-GAMENAME VARCHAR(60)
+id UNSIGNED INT(10) PRIMARY KEY,
+name VARCHAR(60)
 );"""
 
 # Execute table creation
@@ -31,4 +31,3 @@ cursor.execute(sql_command2)
 # Close connection to database
 connection.commit()
 connection.close()
-

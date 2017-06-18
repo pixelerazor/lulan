@@ -7,9 +7,17 @@ from printOperations import *
 # Get input into dictionary
 form = cgi.FieldStorage()
 
+# get list of nicknames already in use
+connection = sqlite3.connect("cgi-bin/lulan.db")
+cursor = connection.cursor()
+cursor.execute("SELECT NICKNAME FROM user;")
+usedNicks = []
+for row in cursor.fetchall():
+    usedNicks.append(row[0])
+connection.close()
+
 # Something wrong with input, return and modify input fields
-# TODO: check if username is taken in DB?
-if ("nickName" not in form) or ("password1" not in form) or ("password2" not in form) or (form["password1"].value != form["password2"].value):
+if ("nickName" not in form) or (form["nickName"].value in usedNicks) or ("password1" not in form) or ("password2" not in form) or (form["password1"].value != form["password2"].value):
     printHeader()
     printNav()
     # Get index file for editing
@@ -21,12 +29,18 @@ if ("nickName" not in form) or ("password1" not in form) or ("password2" not in 
     content = "\t\t<h3>Input missing or wrong!</h3>\n<form".join(sp)
     # Error for missing nickName
     if ("nickName" not in form):
-        sp = content.split("nickName ...")
-        content = "MISSING: nickName".join(sp)
-    # Fill in nickName if found
+        sp = content.split('placeholder="Nickname ..."')
+        content = 'placeholder="MISSING: Nickname."'.join(sp)
+    # Fill in nickname if there is one/error when already used
     else:
-        sp = content.split('name="nickName"')
-        content = ('name="nickName" value="'+form["nickName"].value+'"').join(sp)
+        # nickname already used
+        if form["nickName"].value in usedNicks:
+            sp = content.split('placeholder="Nickname ..."')
+            content = ('placeholder="NICK UNAVAILABLE: '+form["nickName"].value+'"').join(sp)
+        # nickname is fine, fill it in
+        else:
+            sp = content.split('name="nickName"')
+            content = ('name="nickName" value="'+form["nickName"].value+'"').join(sp)
     # Same if/else routine for firstName and lastName
     if ("firstName" in form):
         sp = content.split('name="firstName"')

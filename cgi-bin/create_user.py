@@ -10,7 +10,7 @@ form = cgi.FieldStorage()
 # get list of nicknames already in use
 connection = sqlite3.connect("cgi-bin/lulan.db")
 cursor = connection.cursor()
-cursor.execute("SELECT NICKNAME FROM user;")
+cursor.execute("SELECT nickname FROM user;")
 usedNicks = []
 for row in cursor.fetchall():
     usedNicks.append(row[0])

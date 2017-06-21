@@ -42,8 +42,8 @@ async def receive(websocket, path):
         MyChat.addMessage(message)
         print("< {}".format(message))
 
-start_server = websockets.serve(receive, '127.0.0.1', 8001)
-start_server2 = websockets.serve(messages, '127.0.0.1', 8002)
+start_server = websockets.serve(receive, '0.0.0.0', 8001)
+start_server2 = websockets.serve(messages, '0.0.0.0', 8002)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_until_complete(start_server2)

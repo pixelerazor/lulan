@@ -9,24 +9,24 @@ cursor = connection.cursor()
 # Create table in database
 sql_command = """
 CREATE TABLE IF NOT EXISTS user (
-firstname VARCHAR(30),
-lastname VARCHAR(30),
-nickname VARCHAR(30) PRIMARY KEY,
-password VARCHAR(60)
+    firstname VARCHAR(30),
+    lastname VARCHAR(30),
+    nickname VARCHAR(30) PRIMARY KEY,
+    password VARCHAR(60)
 );"""
 
 # Execute table creation
 cursor.execute(sql_command)
 
 # Create table in database
-sql_command2 = """
+sql_command = """
 CREATE TABLE IF NOT EXISTS games (
-id UNSIGNED INT(10) PRIMARY KEY,
-name VARCHAR(60)
+    id INTEGER PRIMARY KEY,
+    gamename VARCHAR(60)
 );"""
 
 # Execute table creation
-cursor.execute(sql_command2)
+cursor.execute(sql_command)
 
 # Close connection to database
 connection.commit()

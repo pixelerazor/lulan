@@ -16,18 +16,8 @@ connection = sqlite3.connect("lulan.db")
 # Connect to database and set the cursor
 cursor = connection.cursor()
 
-# Create table in database
-sql_command = """
-CREATE TABLE IF NOT EXISTS games (
-GAMEID INTEGER(10),
-GAMENAME TEXT(60)
-);"""
-
-# Execute table creation
-cursor.execute(sql_command)
-
 for game in games:
-    cursor.execute("INSERT INTO games VALUES (a, b);")
+    cursor.execute("INSERT INTO games VALUES (NULL, ?);", (game,))
 
 # Close connection to database
 connection.commit()

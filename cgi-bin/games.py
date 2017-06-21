@@ -28,6 +28,7 @@ def games():
     connection.close()
 
 def gamesHtml():
+    print("<div>")
     print("<form>")
     print("  <h3>Check the games you own:</h3>")
     print("  <h2>This will help us to find matching teammates respectively opponents.</h2>")
@@ -37,6 +38,8 @@ def gamesHtml():
     print("    </ul>")
     print('    <p><button type="submit" class="button">Save</button></p>')
     print("  </fieldset>")
+    print("</form>")
+    print("</div>")
 
 #Definitions that get the Data from the form in reg_games
 def getFormData(y):
@@ -46,8 +49,8 @@ def getFormData(y):
         print(searchterm)
 
 # Get index file for editing
-printHeader()
-printNav()
+indent = printHeader()
+_ = printNav(indent)
 gamesHtml()
 printFooter()
 #getFormData(y)

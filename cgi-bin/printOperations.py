@@ -3,6 +3,7 @@ import asyncio
 import websockets
 
 def indentNewlines(code, num=0):
+    if num == 0: return code
     sp = code.split("\n")
     code = (num*"    ")+(("\n"+(num*"    ")).join(sp))
     return code[0:-(num*4)]

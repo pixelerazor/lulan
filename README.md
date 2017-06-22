@@ -1,10 +1,15 @@
-#lulan
+# lulan
 
-A web interface for organising LAN parties.
+A web interface for organising LAN parties. (WIP)
 
-#Usage
+# Requirements
 
-- Use `sudo ./copy.sh` to copy the apache configuration file.
-- When adding a new python script file use:
-  - `sudo chmod 775 newfile.py`
-  - `sudo chown userName:userName newfile.py`
+* Python 3 (`sudo apt-get install python3 python3-pip`)
+* Websockets package (`sudo pip3 install websockets`)
+
+# Usage
+
+- From the base project folder, start
+  - `python3 -m server`
+  - `python3 -m webSocket`
+- Visit `127.0.0.1:8000/cgi-bin/index.py` in your browser

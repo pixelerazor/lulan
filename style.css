@@ -30,10 +30,17 @@ body {
 
 /* divs for general layout */
 
+#bg {
+    background-image: url(/images/IMG_2824_cut.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 80%;
+}
 #container {
     min-width: 66em;
     min-height: 44em;
-    background: #ffffff;
+    /*background: #ffffff;*/
     color: white;
     text-decoration: none;
     font-family: Impact, Charcoal, sans-serif;
@@ -42,11 +49,12 @@ body {
 
 .center {
     box-sizing: border-box;
-    background: url(/images/IMG_2824_cut.jpg);
+    /*background: url(/images/IMG_2824_cut.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%;*/
     width: 100%;
     height: 80%;
+    overflow-y:auto;
 }
 
 .center h1 {
@@ -226,10 +234,9 @@ body {
 #menuh ul
     {
     list-style-type:none;
-    margin:0;
+    margin: 0.6em;
     padding:0;
     float:left;
-    width: 7em;    /* width of all menu boxes */
     }
 
 #menuh ul ul a {

@@ -13,7 +13,6 @@
             var adress = "ws://";
             adress += window.location.hostname.toString();
             adress += ":8002/";
-            window.alert(adress);
             var ws = new WebSocket(adress),
                 messages = document.createElement('ul'),
                 length = 0,

@@ -21,7 +21,7 @@ def games():
 
     for uid, name in games:
         print("      <li>")
-        print('         <label><input type="checkbox" name="'+name+'" value="'+str(uid)+'">'+name+'<label>')
+        print('         <label><input type="checkbox" name="'+str(uid)+'" value="'+str(uid)+'">'+name+'<label>')
         print("      </li>")
     # Close connection to database
     connection.commit()
@@ -29,7 +29,7 @@ def games():
 
 def gamesHtml():
     print("<div>")
-    print("<form>")
+    print("<form action=games.py method=post>")
     print("  <h3>Check the games you own:</h3>")
     print("  <h2>This will help us to find matching teammates respectively opponents.</h2>")
     print("  <fieldset>")
@@ -42,16 +42,17 @@ def gamesHtml():
     print("</div>")
 
 #Definitions that get the Data from the form in reg_games
-def getFormData(y):
+def getFormData():
     form = cgi.FieldStorage()
-    for i in y:
-        searchterm = form.getvalue(y)
-        print(searchterm)
+    print(form)
+#    for i in form:
+#       print(form[i].value)
 
 # Get index file for editing
 indent = printHeader()
 _ = printNav(indent)
 gamesHtml()
+getFormData()
 printFooter()
 #getFormData(y)
 

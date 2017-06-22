@@ -8,7 +8,6 @@ import sqlite3
 
 # Definitions that create the html page
 def games():
-    global y
     # Establish Database
     connection = sqlite3.connect("cgi-bin/lulan.db")
 
@@ -18,43 +17,46 @@ def games():
     # Create table in database
     games = cursor.execute("SELECT * FROM games;")
 
-
+    listString = []
     for uid, name in games:
-        print("      <li>")
-        print('         <label><input type="checkbox" name="'+str(uid)+'" value="'+str(uid)+'">'+name+'<label>')
-        print("      </li>")
+        listString.append("                <li>")
+        listString.append('                    <label><input type="checkbox" name="'+str(uid)+'" value="'+name+'">'+name+'</label>')
+        listString.append("                </li>")
     # Close connection to database
     connection.commit()
     connection.close()
+    return '\n'.join(listString)
 
 def gamesHtml():
-    print("<div>")
-    print("<form action=games.py method=post>")
-    print("  <h3>Check the games you own:</h3>")
-    print("  <h2>This will help us to find matching teammates respectively opponents.</h2>")
-    print("  <fieldset>")
-    print("    <ul>")
-    games()
-    print("    </ul>")
-    print('    <p><button type="submit" class="button">Save</button></p>')
-    print("  </fieldset>")
-    print("</form>")
-    print("</div>")
+    text = ("<div class='center'>",
+            getFormData(),
+            "    <h2>Check the games you own:</h2>",
+            "    <h3>This will help us to find matching teammates and opponents.</h3>",
+            "    <form action='games.py' method='post'>",
+            "        <fieldset>",
+            "            <ul>",
+            games(),
+            "            </ul>",
+            '            <p><button type="submit" class="button">Save</button></p>',
+            "        </fieldset>",
+            "    </form>",
+            "</div>\n"
+           )
+    print(indentNewlines('\n'.join(text), 3), end='')
 
 #Definitions that get the Data from the form in reg_games
 def getFormData():
     form = cgi.FieldStorage()
-    print(form)
-#    for i in form:
-#       print(form[i].value)
+    text = []
+    for i in form:
+       text.append("<p>"+i+": "+form[i].value+"</p>")
+    return '\n'.join(text)
 
 # Get index file for editing
 indent = printHeader()
 _ = printNav(indent)
 gamesHtml()
-getFormData()
 printFooter()
-#getFormData(y)
 
 #TODO: Solve the Problem with the missing file links
 #TODO: Maybe add a "Add games" button
